@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "copper_nugget",
+  "ingredients": [
+    {
+      "item": "bronze_age:copper_ingot"
+    }
+  ],
+  "result": {
+    "item": "bronze_age:copper_nugget",
+    "count": 9
+  }
+}

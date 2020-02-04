@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "copper_ingot",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "bronze_age:copper_nugget"
+    }
+  },
+  "result": {
+    "item": "bronze_age:copper_ingot"
+  }
+}

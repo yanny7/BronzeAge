@@ -3,5 +3,12 @@
     "block.bronze_age.tin_ore": "Tin ore",
     "block.bronze_age.copper_block": "Copper block",
     "block.bronze_age.tin_block": "Tin block",
-    "block.bronze_age.bronze_block": "Bronze block"
+    "block.bronze_age.bronze_block": "Bronze block",
+
+    "item.bronze_age.copper_ingot": "Copper ingot",
+    "item.bronze_age.tin_ingot": "Tin ingot",
+    "item.bronze_age.bronze_ingot": "Bronze ingot",
+    "item.bronze_age.copper_nugget": "Copper nugget",
+    "item.bronze_age.tin_nugget": "Tin nugget",
+    "item.bronze_age.bronze_nugget": "Bronze nugget"
 }

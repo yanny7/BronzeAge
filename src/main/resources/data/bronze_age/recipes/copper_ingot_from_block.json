@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "copper_ingot",
+  "ingredients": [
+    {
+      "item": "bronze_age:copper_block"
+    }
+  ],
+  "result": {
+    "item": "bronze_age:copper_ingot",
+    "count": 9
+  }
+}
