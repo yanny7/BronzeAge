@@ -53,12 +53,12 @@ public class ModEventSubscriber {
     @SubscribeEvent
     public static void FMLLoadCompleteEvent(FMLLoadCompleteEvent event) {
         for (Biome biome : ForgeRegistries.BIOMES) {
-            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(
-                    OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockSubscriber.copper_ore.getDefaultState(), 9)).
-                    func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(40, 32, 0, 196))));
-            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(
-                    OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockSubscriber.tin_ore.getDefaultState(), 9)).
-                    func_227228_a_(Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(40, 32, 0, 196))));
+            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(
+                    OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockSubscriber.copper_ore.getDefaultState(), 17), Placement.COUNT_RANGE,
+                    new CountRangeConfig(40, 32, 0, 196)));
+            biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Biome.createDecoratedFeature(Feature.ORE, new OreFeatureConfig(
+                    OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockSubscriber.tin_ore.getDefaultState(), 17), Placement.COUNT_RANGE,
+                    new CountRangeConfig(40, 32, 0, 196)));
         }
     }
 }

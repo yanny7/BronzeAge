@@ -23,7 +23,7 @@ public class ForgeEventSubscriber {
             return;
         }
 
-        BlockPos.Mutable pos = new BlockPos.Mutable();
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         Chunk chunk = event.getWorld().getChunkAt(event.getPos());
         Map<Block, MutableInt> stats = new HashMap<>();
 
