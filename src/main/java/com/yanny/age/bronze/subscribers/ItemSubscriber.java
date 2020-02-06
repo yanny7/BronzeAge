@@ -21,6 +21,8 @@ public class ItemSubscriber {
     public static final Item copper_nugget = null;
     public static final Item tin_nugget = null;
     public static final Item bronze_nugget = null;
+    public static final Item crushed_copper_ore = null;
+    public static final Item crushed_tin_ore = null;
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -31,5 +33,7 @@ public class ItemSubscriber {
         registry.register(new Item(new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "copper_nugget"));
         registry.register(new Item(new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "tin_nugget"));
         registry.register(new Item(new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "bronze_nugget"));
+        registry.register(new Item(new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "crushed_copper_ore"));
+        registry.register(new Item(new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "crushed_tin_ore"));
     }
 }
