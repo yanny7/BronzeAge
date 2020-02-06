@@ -1,0 +1,14 @@
+{
+  "type": "stone_age:tree_stump",
+  "ingredient": {
+    "item": "bronze_age:copper_ore"
+  },
+  "tool": {
+    "tag": "ages_api:hammers"
+  },
+  "result": {
+    "item": "bronze_age:crushed_copper_ore",
+    "count": 1
+  },
+  "chopTimes": 2
+}

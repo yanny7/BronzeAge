@@ -10,5 +10,7 @@
     "item.bronze_age.bronze_ingot": "Bronze ingot",
     "item.bronze_age.copper_nugget": "Copper nugget",
     "item.bronze_age.tin_nugget": "Tin nugget",
-    "item.bronze_age.bronze_nugget": "Bronze nugget"
+    "item.bronze_age.bronze_nugget": "Bronze nugget",
+    "item.bronze_age.crushed_copper_ore": "Crushed copper ore",
+    "item.bronze_age.crushed_tin_ore": "Crushed tin ore"
 }
