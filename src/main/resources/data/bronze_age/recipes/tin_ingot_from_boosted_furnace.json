@@ -1,0 +1,14 @@
+{
+  "type": "bronze_age:boosted_furnace",
+  "group": "tin_ingot",
+  "ingredient": {
+    "item": "bronze_age:crushed_tin_ore"
+  },
+  "result": {
+    "item": "bronze_age:tin_ingot"
+  },
+  "secondResult": {
+    "item": "minecraft:cobblestone"
+  },
+  "meltingPoint": 230
+}

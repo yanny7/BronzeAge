@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "bronze_age:block/boosted_furnace_top",
+        "front": "bronze_age:block/boosted_furnace_front_on",
+        "side": "bronze_age:block/boosted_furnace_side"
+    }
+}

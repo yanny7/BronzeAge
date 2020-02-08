@@ -1,5 +1,6 @@
 package com.yanny.age.bronze.subscribers;
 
+import com.yanny.age.bronze.blocks.BoostedFurnaceBlock;
 import com.yanny.ages.api.group.ModItemGroup;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -24,6 +25,7 @@ public class BlockSubscriber {
     public static final Block copper_block = null;
     public static final Block tin_block = null;
     public static final Block bronze_block = null;
+    public static final Block boosted_furnace = null;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -36,6 +38,10 @@ public class BlockSubscriber {
         registry.register(new Block(properties).setRegistryName(MODID, "copper_block"));
         registry.register(new Block(properties).setRegistryName(MODID, "tin_block"));
         registry.register(new Block(properties).setRegistryName(MODID, "bronze_block"));
+
+        Block.Properties furnaceProperties = Block.Properties.create(Material.ROCK).harvestLevel(ItemTier.STONE.getHarvestLevel()).harvestTool(ToolType.PICKAXE).
+                hardnessAndResistance(3, 3).lightValue(13);
+        registry.register(new BoostedFurnaceBlock(furnaceProperties).setRegistryName(MODID, "boosted_furnace"));
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -47,5 +53,6 @@ public class BlockSubscriber {
         registry.register(new BlockItem(copper_block, new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "copper_block"));
         registry.register(new BlockItem(tin_block, new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "tin_block"));
         registry.register(new BlockItem(bronze_block, new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "bronze_block"));
+        registry.register(new BlockItem(boosted_furnace, new Item.Properties().group(ModItemGroup.AGES)).setRegistryName(MODID, "boosted_furnace"));
     }
 }
