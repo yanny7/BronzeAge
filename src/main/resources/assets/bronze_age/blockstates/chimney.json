@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "": [
+            {
+                "model": "bronze_age:block/chimney"
+            }
+        ]
+    }
+}

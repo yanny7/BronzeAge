@@ -139,4 +139,25 @@ public class BoostedFurnaceBlock extends HorizontalBlock {
             worldIn.addParticle(ParticleTypes.FLAME, d0 + d5, d1 + d6, d2 + d7, 0.0D, 0.0D, 0.0D);
         }
     }
+
+    public static void spawnSmokeParticles(@Nonnull World worldIn, @Nonnull BlockPos pos, boolean spawnExtraSmoke) {
+        BoostedFurnaceTileEntity tileEntity = (BoostedFurnaceTileEntity) worldIn.getTileEntity(pos);
+        Random random = worldIn.getRandom();
+
+        if (tileEntity != null) {
+            worldIn.addOptionalParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, true,
+                    (double) pos.getX() + 0.5D + random.nextDouble() / 3.0D * (double) (random.nextBoolean() ? 1 : -1),
+                    (double) pos.getY() + tileEntity.getChimneyCount() + 1D + random.nextDouble() * 0.5D,
+                    (double) pos.getZ() + 0.5D + random.nextDouble() / 3.0D * (double) (random.nextBoolean() ? 1 : -1),
+                    0.0D, 0.1D, 0.0D);
+
+            if (spawnExtraSmoke) {
+                worldIn.addParticle(ParticleTypes.SMOKE,
+                        (double) pos.getX() + 0.25D + random.nextDouble() / 2.0D * (double) (random.nextBoolean() ? 1 : -1),
+                        (double) pos.getY() + tileEntity.getChimneyCount() + 1D,
+                        (double) pos.getZ() + 0.25D + random.nextDouble() / 2.0D * (double) (random.nextBoolean() ? 1 : -1),
+                        0.0D, 0.001D, 0.0D);
+            }
+        }
+    }
 }

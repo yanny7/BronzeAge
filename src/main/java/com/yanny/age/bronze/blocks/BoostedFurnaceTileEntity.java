@@ -1,10 +1,10 @@
 package com.yanny.age.bronze.blocks;
 
 import com.yanny.age.bronze.recipes.BoostedFurnaceRecipe;
+import com.yanny.age.bronze.subscribers.BlockSubscriber;
 import com.yanny.age.bronze.subscribers.TileEntitySubscriber;
 import com.yanny.ages.api.utils.ItemStackUtils;
 import net.minecraft.block.AbstractFurnaceBlock;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
@@ -33,6 +33,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Optional;
+import java.util.Random;
 
 public class BoostedFurnaceTileEntity extends TileEntity implements IInventoryInterface, ITickableTileEntity, INamedContainerProvider {
     public static final int ITEMS = 4;
@@ -49,6 +50,7 @@ public class BoostedFurnaceTileEntity extends TileEntity implements IInventoryIn
     private final IItemHandlerModifiable tmpItemHandler = new ItemStackHandler(1);
     private final RecipeWrapper tmpItemHandlerWrapper = new RecipeWrapper(tmpItemHandler);
     private final IIntArray data = getData();
+    private final Random random = new Random();
 
     private ItemStack result = ItemStack.EMPTY;
     private int burnTimeLeft = 0;
@@ -69,6 +71,14 @@ public class BoostedFurnaceTileEntity extends TileEntity implements IInventoryIn
     @Override
     public void tick() {
         assert world != null;
+
+        if (world.isRemote && getBlockState().get(BoostedFurnaceBlock.LIT)) {
+            if (random.nextFloat() < 0.11F) {
+                for (int i = 0; i < random.nextInt(2) + 2; ++i) {
+                    BoostedFurnaceBlock.spawnSmokeParticles(world, pos, random.nextBoolean());
+                }
+            }
+        }
 
         tick++;
         if (tick % 20 == 0) {
@@ -251,6 +261,10 @@ public class BoostedFurnaceTileEntity extends TileEntity implements IInventoryIn
         return getRecipe(itemStack).isPresent();
     }
 
+    public int getChimneyCount() {
+        return chimneyCount;
+    }
+
     private void setupFromRecipe(World world) {
         ItemStack itemStack = stacks.get(1);
         Optional<BoostedFurnaceRecipe> recipe = getRecipe(itemStack);
@@ -284,7 +298,8 @@ public class BoostedFurnaceTileEntity extends TileEntity implements IInventoryIn
         int count = 0;
 
         for (int i = 0; i < MAX_CHIMNEY_COUNT; i++) {
-            if (world.getBlockState(pos.up(i + 1)).getBlock().equals(Blocks.AIR)) {
+            //noinspection ConstantConditions
+            if (world.getBlockState(pos.up(i + 1)).getBlock().equals(BlockSubscriber.chimney)) {
                 count++;
             } else {
                 break;

@@ -4,6 +4,8 @@
     "block.bronze_age.copper_block": "Copper block",
     "block.bronze_age.tin_block": "Tin block",
     "block.bronze_age.bronze_block": "Bronze block",
+    "block.bronze_age.boosted_furnace": "Boosted furnace",
+    "block.bronze_age.chimney": "Chimney",
 
     "item.bronze_age.copper_ingot": "Copper ingot",
     "item.bronze_age.tin_ingot": "Tin ingot",
