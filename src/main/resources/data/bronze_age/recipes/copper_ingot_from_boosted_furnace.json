@@ -1,0 +1,14 @@
+{
+  "type": "bronze_age:boosted_furnace",
+  "group": "copper_ingot",
+  "ingredient": {
+    "item": "bronze_age:crushed_copper_ore"
+  },
+  "result": {
+    "item": "bronze_age:copper_ingot"
+  },
+  "secondResult": {
+    "item": "minecraft:cobblestone"
+  },
+  "meltingPoint": 1100
+}

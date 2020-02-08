@@ -25,7 +25,6 @@ public class ModEventSubscriber {
     @SubscribeEvent
     public static void init(FMLCommonSetupEvent event) {
         ExampleMod.proxy.init();
-        System.out.println("init");
     }
 
     @SubscribeEvent
