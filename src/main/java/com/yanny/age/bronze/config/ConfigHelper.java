@@ -7,6 +7,7 @@ import javax.annotation.Nonnull;
 public class ConfigHelper {
 
     public static void bakeServer() {
+        Config.removeVanillaRecipes = ConfigHolder.SERVER.removeVanillaRecipes.get();
     }
 
     public static void bakeClient() {
